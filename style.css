@@ -287,6 +287,7 @@ p {
 }
 
 .about-photo {
+  /* Classe aplicada na revisão anterior */
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -552,113 +553,227 @@ p {
   transform: translateX(3px);
 }
 
+/* === INÍCIO DAS ALTERAÇÕES NA SEÇÃO DE CONTATO === */
+
 .contact-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 50px;
+  /* grid-template-columns: 1fr; (original, não precisa se for filho único de grid e não houver outro) */
+  /* gap: 50px; (original) */
+  /* max-width: 800px; (original) */
+  /* margin: 0 auto; (original) */
+  /* background: rgba(10, 20, 30, 0.3); (original) */
+  /* padding: 40px; (original) */
+  /* border-radius: 15px; (original) */
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); (original) */
+  /* backdrop-filter: blur(5px); (original) */
+  /* border: 1px solid rgba(255, 255, 255, 0.05); (original) */
+
+  border-top: 3px solid #00aaff; /* Adiciona uma borda de destaque no topo */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3),
+    0 0 25px rgba(0, 170, 255, 0.12) inset; /* Sombra mais pronunciada e um brilho interno sutil */
+  padding: 50px 30px 60px 30px; /* Ajusta o preenchimento interno (topo, laterais, rodapé) */
+  background: rgba(
+    12,
+    22,
+    38,
+    0.35
+  ); /* Um fundo sutilmente diferente para destacar mais o card */
+  /* Mantém outros estilos originais como max-width, margin, border-radius, backdrop-filter, etc. */
   max-width: 800px;
   margin: 0 auto;
-  background: rgba(10, 20, 30, 0.3);
-  padding: 40px;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Sobrescreve se necessário, mas o original é similar */
+  display: grid; /* Mantém se era grid antes */
+  gap: 40px; /* Ajustado o gap se necessário */
+}
+
+.contact-info {
+  text-align: center; /* Centraliza o título e o botão do WhatsApp */
+  /* Outros estilos de .contact-info, se houver, são mantidos */
 }
 
 .contact-info h3 {
-  margin-bottom: 30px;
-  font-size: 1.8rem;
-  color: #ffffff;
-  text-shadow: 0 0 10px rgba(0, 170, 255, 0.3);
+  /* margin-bottom: 30px; (original) */
+  /* font-size: 1.8rem; (original) */
+  /* color: #ffffff; (original) */
+  /* text-shadow: 0 0 10px rgba(0, 170, 255, 0.3); (original) */
+
+  font-size: 2.2rem; /* Aumenta um pouco o tamanho da fonte */
+  font-weight: 700; /* Garante que o peso da fonte seja forte */
+  color: #00aaff; /* Cor de destaque principal */
+  margin-bottom: 50px; /* Aumenta o espaço abaixo do título */
+  text-shadow: none; /* Remove sombra de texto anterior para um visual mais limpo com a cor direta */
 }
 
 .contact-item {
+  /* display: flex; (original) */
+  /* align-items: center; (original) */
+  /* margin-bottom: 25px; (original) */
+  /* transition: transform 0.3s ease; (original) */
+
   display: flex;
   align-items: center;
-  margin-bottom: 25px;
-  transition: transform 0.3s ease;
+  text-align: left; /* Garante que o texto dentro do item seja alinhado à esquerda */
+  max-width: 450px; /* Define uma largura máxima para os itens, para melhor leitura */
+  margin-left: auto; /* Centraliza o bloco do item se houver largura disponível */
+  margin-right: auto; /* Centraliza o bloco do item se houver largura disponível */
+  margin-bottom: 20px; /* Espaçamento entre os itens */
+  transition: transform 0.3s ease, background-color 0.3s ease,
+    border-color 0.3s ease; /* Transições suaves */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.04
+  ); /* Um fundo base sutilmente mais visível */
+  padding: 18px 22px; /* Preenchimento interno */
+  border-radius: 12px; /* Bordas mais arredondadas */
+  border: 1px solid transparent; /* Borda inicial transparente para transição no hover */
 }
 
 .contact-item:hover {
-  transform: translateX(5px);
+  /* transform: translateX(5px); (original) */
+  transform: translateY(-5px); /* Eleva o item no hover */
+  background-color: rgba(0, 170, 255, 0.1); /* Muda a cor de fundo */
+  border-color: rgba(0, 170, 255, 0.35); /* Adiciona uma cor à borda */
+}
+
+.contact-item:hover .contact-icon {
+  transform: scale(1.1); /* Aumenta levemente o ícone */
 }
 
 .contact-icon {
-  font-size: 1.5rem;
-  margin-right: 20px;
-  color: #00aaff;
-  width: 40px;
-  height: 40px;
+  /* font-size: 1.5rem; (original) */
+  /* margin-right: 20px; (original) */
+  /* color: #00aaff; (original) */
+  /* width: 40px; (original) */
+  /* height: 40px; (original) */
+  /* display: flex; (original) */
+  /* align-items: center; (original) */
+  /* justify-content: center; (original) */
+  /* background: rgba(0, 170, 255, 0.1); (original) */
+  /* border-radius: 50%; (original) */
+  /* box-shadow: 0 0 15px rgba(0, 170, 255, 0.2); (original) */
+
+  font-size: 1.6rem; /* Tamanho do ícone */
+  margin-right: 25px; /* Espaço entre o ícone e o texto */
+  color: #00aaff; /* Cor do ícone */
+  width: 45px; /* Largura da caixa do ícone */
+  height: 45px; /* Altura da caixa do ícone */
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 170, 255, 0.1);
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgba(0, 170, 255, 0.2);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 170, 255, 0.15),
+    rgba(0, 170, 255, 0.05)
+  ); /* Fundo em gradiente */
+  border-radius: 10px; /* Bordas arredondadas para a caixa do ícone */
+  box-shadow: 0 4px 10px rgba(0, 170, 255, 0.1); /* Sombra sutil */
+  flex-shrink: 0; /* Impede que o ícone encolha */
+  transition: transform 0.3s ease; /* Transição suave para o ícone */
 }
 
 .contact-text {
+  /* font-size: 1.1rem; (original) */
   font-size: 1.1rem;
+  color: #e8e8e8; /* Cor do texto levemente mais clara para melhor leitura */
+}
+
+/* Estilo para links dentro do texto de contato, caso existam */
+.contact-text a {
+  color: #e8e8e8;
+  text-decoration: underline;
+  text-decoration-color: #00aaff; /* Sublinhado com a cor de destaque */
+}
+.contact-text a:hover {
+  color: #00aaff; /* Cor do link no hover */
 }
 
 .whatsapp-button {
+  /* Estilos originais de .whatsapp-button e .cta-button são herdados/combinados */
+  /* display: inline-flex; (original) */
+  /* align-items: center; (original) */
+  /* padding: 14px 30px; (original) */
+  /* background: linear-gradient(135deg, #20c65a, #25d366); (original) */
+  /* color: white; (original) */
+  /* border-radius: 30px; (original) */
+  /* font-weight: 600; (original) */
+  /* text-transform: uppercase; (original) */
+  /* letter-spacing: 1px; (original) */
+  /* box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3); (original) */
+  /* transition: all 0.3s ease; (original) */
+  /* margin: 30px 0; (original) */
+  /* position: relative; (original) */
+  /* overflow: hidden; (original) */
+  /* z-index: 1; (original) */
+
+  margin-top: 50px; /* Mais espaço acima */
+  margin-bottom: 45px; /* Mais espaço abaixo */
+  padding: 18px 40px; /* Preenchimento mais generoso */
+  font-size: 1.05rem; /* Tamanho da fonte do botão levemente maior */
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3); /* Sombra mais pronunciada */
+  /* Mantém outros estilos originais como display, background, color, etc. */
   display: inline-flex;
   align-items: center;
-  padding: 14px 30px;
   background: linear-gradient(135deg, #20c65a, #25d366);
   color: white;
   border-radius: 30px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
   transition: all 0.3s ease;
-  margin: 30px 0;
   position: relative;
   overflow: hidden;
   z-index: 1;
 }
-
-.whatsapp-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #25d366, #20c65a);
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
 .whatsapp-button i {
+  /* margin-right: 12px; (original) */
+  /* font-size: 1.6rem; (original) */
+  /* transition: transform 0.3s ease; (original) */
   margin-right: 12px;
   font-size: 1.6rem;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease; /* Adicionado para o efeito de hover no ícone */
 }
 
 .whatsapp-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+  /* transform: translateY(-3px); (original) */
+  /* box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4); (original) */
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); /* Sombra mais pronunciada no hover */
+  transform: translateY(-4px) scale(1.03); /* Efeito de elevação e escala mais interativo */
 }
-
 .whatsapp-button:hover::before {
+  /* Estilo original */
   opacity: 1;
 }
-
 .whatsapp-button:hover i {
+  /* Estilo original */
   transform: scale(1.1);
 }
 
 .social-links {
+  /* display: flex; (original) */
+  /* gap: 30px; (original) */
+  /* margin-top: 30px; (original) */
   display: flex;
-  gap: 30px;
-  margin-top: 30px;
+  gap: 40px; /* Aumenta o espaço entre os ícones */
+  margin-top: 0; /* Ajustado para melhor fluxo com o botão WhatsApp */
+  justify-content: center; /* Garante que os ícones estejam centralizados */
 }
 
 .social-icon-link {
+  /* position: relative; (original) */
+  /* width: 60px; (original) */
+  /* height: 60px; (original) */
+  /* display: flex; (original) */
+  /* align-items: center; (original) */
+  /* justify-content: center; (original) */
+  /* border-radius: 50%; (original) */
+  /* background: rgba(255, 255, 255, 0.05); (original) */
+  /* transition: all 0.3s ease; (original) */
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); (original) */
+  /* overflow: hidden; (original) */
+
   position: relative;
   width: 60px;
   height: 60px;
@@ -666,48 +781,51 @@ p {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(
+    255,
+    255,
+    255,
+    0.06
+  ); /* Fundo base sutilmente mais visível */
   transition: all 0.3s ease;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  border: 1px solid transparent; /* Borda para transição no hover */
 }
 
-.social-icon-link::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.social-icon-link:hover {
+  /* transform: translateY(-5px); (original) */
+  /* box-shadow: 0 8px 20px rgba(0, 170, 255, 0.3); (original) */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 170, 255, 0.3);
+  border-color: rgba(0, 170, 255, 0.3); /* Cor da borda no hover */
+}
+.social-icon-link:hover::before {
+  /* Estilo original, ajustado o gradiente */
+  opacity: 1;
   background: linear-gradient(
     135deg,
-    rgba(0, 170, 255, 0.2),
-    rgba(0, 80, 150, 0.2)
+    rgba(0, 170, 255, 0.25),
+    rgba(0, 80, 150, 0.25)
   );
-  opacity: 0;
-  transition: opacity 0.3s ease;
 }
-
 .social-icon-link i {
+  /* font-size: 2.2rem; (original) */
+  /* color: #ffffff; (original) */
+  /* transition: all 0.3s ease; (original) */
+  /* z-index: 2; (original) */
   font-size: 2.2rem;
   color: #ffffff;
   transition: all 0.3s ease;
   z-index: 2;
 }
-
-.social-icon-link:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 170, 255, 0.3);
-}
-
-.social-icon-link:hover::before {
-  opacity: 1;
-}
-
 .social-icon-link:hover i {
+  /* Estilo original */
   color: #00aaff;
   transform: scale(1.15);
 }
+
+/* === FIM DAS ALTERAÇÕES NA SEÇÃO DE CONTATO === */
 
 .footer {
   background: rgba(0, 0, 0, 0.5);
